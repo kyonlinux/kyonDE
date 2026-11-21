@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=KyonDE (nested)
+Comment=Run the KyonDE compositor inside the current session
+Exec=@BIN_DIR@/kyonde winit
+Icon=preferences-desktop
+Terminal=false
+Categories=System;
+Keywords=wayland;compositor;kyonde;nested;
+StartupNotify=false

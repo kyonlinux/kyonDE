@@ -1,0 +1,43 @@
+[package]
+name = "kyonde"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+kyon-ipc.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+calloop.workspace = true
+mlua = { version = "0.10", features = ["lua54", "vendored", "serialize"] }
+tiny-skia = "0.11"
+cosmic-text = "0.19"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+smithay = { path = "../smithay", default-features = false, features = ["desktop", "wayland_frontend"] }
+smithay-drm-extras = { path = "../smithay/smithay-drm-extras", optional = true }
+
+[features]
+default = ["winit", "udev"]
+vulkan-probe = ["smithay/backend_vulkan"]
+winit = [
+  "smithay/backend_winit",
+  "smithay/backend_egl",
+  "smithay/backend_drm",
+  "smithay/renderer_gl",
+  "smithay/use_system_lib",
+  "vulkan-probe",
+]
+udev = [
+  "dep:smithay-drm-extras",
+  "smithay/backend_udev",
+  "smithay/backend_drm",
+  "smithay/backend_gbm",
+  "smithay/backend_libinput",
+  "smithay/backend_session_libseat",
+  "smithay/backend_egl",
+  "smithay/renderer_gl",
+  "smithay/use_system_lib",
+  "vulkan-probe",
+]

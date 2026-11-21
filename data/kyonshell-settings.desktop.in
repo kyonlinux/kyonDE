@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Kyon Settings
+Comment=Configure KyonDE layouts, appearance and wallpapers
+Exec=@BIN_DIR@/kyonshell settings
+Icon=preferences-system
+Terminal=false
+Categories=Settings;DesktopSettings;
+Keywords=kyon;kyonde;settings;configuration;
+StartupNotify=true

@@ -1,0 +1,12 @@
+[package]
+name = "kyonshell"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+kyon-ipc.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+gtk4 = { version = "0.11", features = ["v4_12"] }
+gtk4-layer-shell = "0.8"

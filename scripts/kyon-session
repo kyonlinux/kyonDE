@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+export XDG_CURRENT_DESKTOP=KyonDE
+export XDG_SESSION_DESKTOP=kyonde
+export XDG_SESSION_TYPE=wayland
+
+KYONDE="${KYONDE_BIN:-kyonde}"
+if [ "${KYONDE_FORCE_TTY:-0}" = "1" ] || { [ -z "${WAYLAND_DISPLAY:-}" ] && [ -z "${DISPLAY:-}" ]; }; then
+    exec "$KYONDE" tty "$@"
+fi
+exec "$KYONDE" winit "$@"

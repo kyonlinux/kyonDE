@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=KyonDE
+Comment=KyonDE Wayland desktop
+Exec=env KYONDE_FORCE_TTY=1 kyon-session
+Type=Application
+DesktopNames=KyonDE

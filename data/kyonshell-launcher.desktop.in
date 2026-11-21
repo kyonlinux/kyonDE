@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Kyon Launcher
+Comment=Launch applications on KyonDE
+Exec=@BIN_DIR@/kyonshell launcher
+Icon=view-app-grid
+Terminal=false
+Categories=Utility;
+Keywords=launcher;applications;kyon;
+StartupNotify=true
